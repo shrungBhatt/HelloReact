@@ -70,7 +70,8 @@ class App extends Component {
       <div className={cssClass.App}>
         <Cockpit persons = {this.state.persons}
                  showPersons = {this.state.showPersons}
-                 click = {() => this.togglePersonsDiv()}/>
+                 click = {() => this.togglePersonsDiv()}
+                 title = {this.props.appTitle}/>
         {personsDiv}
       </div>
     );

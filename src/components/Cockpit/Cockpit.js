@@ -21,7 +21,7 @@ const Cockpit = (props) => {
 
     return (
         <div>
-            <h1>This is my first app in React!</h1>
+            <h1>{props.title}</h1>
             <p className={textStyle.join(' ')}>I am enjoying it so far!!</p>
             <button className={buttonStyle.join(' ')} onClick={props.click}>Show Persons</button>
         </div>
