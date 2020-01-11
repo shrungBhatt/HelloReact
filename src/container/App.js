@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Person from '../components/Persons/Person/Person';
 import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 import cssClass from './App.css';
 
 class App extends Component {
@@ -51,7 +52,6 @@ class App extends Component {
   render() {
 
     let personsDiv = null;
-    let buttonStyle = [cssClass.Button];
 
     if(this.state.showPersons){
       personsDiv = (
@@ -64,24 +64,13 @@ class App extends Component {
         </div>
       );
 
-      buttonStyle.push(cssClass.Red);
-    }
-
-    const textStyle = [];
-
-    if(this.state.persons.length <= 2){
-      textStyle.push(cssClass.red);
-    }
-
-    if(this.state.persons.length <= 1){
-      textStyle.push(cssClass.bold);
     }
 
     return (
       <div className={cssClass.App}>
-        <h1>This is my first app in React!</h1>
-        <p className={textStyle.join(' ')}>I am enjoying it so far!!</p>
-        <button className={buttonStyle.join(' ')} onClick={this.togglePersonsDiv}>Show Persons</button>
+        <Cockpit persons = {this.state.persons}
+                 showPersons = {this.state.showPersons}
+                 click = {() => this.togglePersonsDiv()}/>
         {personsDiv}
       </div>
     );
